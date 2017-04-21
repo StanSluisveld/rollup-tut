@@ -7,7 +7,7 @@ const result1 = sayHelloTo('Jason');
 const result2 = addArray([1, 2, 3, 4]);
 
 // Print the results on the page.
-const printTarget = document.getElementsById('app')[0];
+var app = document.getElementById('app');
 
-printTarget.innerText = `sayHelloTo('Jason') => ${result1}\n\n`;
-printTarget.innerText += `addArray([1, 2, 3, 4]) => ${result2}`;
+app.innerHTML = `sayHelloTo('Jason') => ${result1}\n\n`;
+app.innerHTML += `addArray([1, 2, 3, 4]) => ${result2}`;
