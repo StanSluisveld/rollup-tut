@@ -1,6 +1,7 @@
 // rollup plugins
 import babel from 'rollup-plugin-babel';
 import eslint from 'rollup-plugin-eslint';
+import replace from 'rollup-plugin-replace';
 
 export default {
     entry: 'src/main.js',
@@ -10,11 +11,14 @@ export default {
     plugins: [
         eslint({
             exclude: [
-                'src/styles/**'
-            ], 
+                'src/styles/**',
+            ]
         }),
         babel({
             exclude: 'node_modules/**',
+        }),
+        replace({
+            ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
         }),
     ],
 };
