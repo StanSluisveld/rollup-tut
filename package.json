@@ -5,16 +5,21 @@
   "main": "build/bundle.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "rollup": "./node_modules/.bin/rollup -c"
+    "rollup": "rollup -c --watch",
+    "reload": "livereload 'build/'",
+    "watch": "npm-run-all --parallel rollup reload"
   },
   "author": "",
   "license": "ISC",
   "homepage": "",
   "devDependencies": {
     "babel-preset-es2015-rollup": "^3.0.0",
+    "livereload": "^0.6.2",
+    "npm-run-all": "^4.0.2",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-eslint": "^3.0.0",
+    "rollup-plugin-livereload": "^0.4.0",
     "rollup-plugin-replace": "^1.1.1",
     "rollup-plugin-uglify": "^1.0.2",
     "rollup-watch": "^3.2.2"
